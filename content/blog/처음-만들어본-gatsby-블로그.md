@@ -100,7 +100,7 @@ Gatsby에 올라온 [글](https://www.gatsbyjs.com/docs/upgrading-node-js/) 을 
 
 2022년 기준 gatsby가 지원하는 node.js 버전이 14.15 이상이라고 해서 저는 16 버전을 설치하였습니다.
 
-```
+```
 brew install node@16
 
 nvm install 16
@@ -111,7 +111,8 @@ nvm alias default 16
 node -v
 ```
 
-이제 노드 버전을 확인하면 새로 설치한 16버전임을 확인할 수 있습닌다. 
+이제 노드 버전을 확인하면 새로 설치한 16버전임을 확인할 수 있습다. 
+
 
 
 
