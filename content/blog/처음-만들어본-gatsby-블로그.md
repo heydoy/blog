@@ -37,6 +37,7 @@ node@12: undefined method `cellar' for #<BottleSpecification:0x00007fa8e75d54e8>
 이런 경고메시지가 뜨고 설치가 되지 않았습니다. 
 Homebrew 깃허브에서도 나온 [이슈](https://github.com/Homebrew/discussions/discussions/2599) 인데 나왔던 답변들을 적용해봐도 잘 되지 않아서결국 homebrew 부터 지우고 다시 설치하게 되었습니다.
 
+
 ### brew 설치
 
 [brew 홈페이지](https://brew.sh/) 
