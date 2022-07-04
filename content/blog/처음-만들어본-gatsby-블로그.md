@@ -140,14 +140,14 @@ npm install -g gatsby-cli
 
 이 블로그 페이지는 [gatsby-personal-starter-blog](https://github.com/thomaswangio/gatsby-personal-starter-blog)를 이용해 만듭니다.
 
-블로그 프로젝트를 만들 경로에서 아래 명령어를 쉘 입력합니다.
+블로그 프로젝트를 만들 경로에서 아래 명령어를 쉘에 입력합니다.
 
 
 ```
 gatsby new \[your-project-name] https://github.com/thomaswangio/gatsby-personal-starter-blog
 ```
 
-인스톨이 끝나면 프로젝트 이름으로 만ㄴ들어진 디렉토리로 이동하여 패키지를 설치합니다.
+인스톨이 끝나면 프로젝트 이름으로 만들어진 디렉토리로 이동하여 패키지를 설치합니다.
 
 ```
 cd [your-project-name] 
@@ -163,7 +163,7 @@ gatsby develop
 
 * config.yml 수정 
 
-static/admin/config.yml 에서 backend에 name과 레포를 각각 github , 깃허브 사용자이름/레포이름 으로 변경합니다.
+static/admin/config.yml 에서 backend에 name과 레포를 각각 github, 깃허브 사용자이름/레포이름 으로 변경합니다.
 
 ```
 backend:
