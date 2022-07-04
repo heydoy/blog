@@ -6,7 +6,9 @@ description: Gatsby, Netlify를 이용하여 처음으로 블로그를 만들었
 ---
 ## 들어가며
 
-저는 제작년부 사용하고 있는 티스토리 블로그([kimdee.tistory.com](https://kimdee.tistory.com/))가 있는데요. 애드센스를 붙인 블로그라서 깔끔하지 않고, 개발 공부를 하면서 직접 블로그를 만들어보고 싶다는 생각이 들었습니다. 현재 참여하고 있는 [SESAC iOS 교육 과정](https://sesac.seoul.kr/course/active/detail.do) 에서 TIL을 올리는 블로그를 다같이 공유하게 되서 그 김에 오랜 숙원이었던 블로그를 만들게 되었어요.  
+저는 사실 제작년부 사용하고 있는 티스토리 블로그([kimdee.tistory.com](https://kimdee.tistory.com/))가 있는데요. 애드센스를 붙였다보니 깔끔하지 않고 개발 내용 외에도 다른 신변잡기들이 많아서 개발공부용 블로그를 따로 만들어보고 싶다는 생각은 계속 하고 있었습니다.  
+
+현재 참여하고 있는 [SESAC iOS 교육 과정](https://sesac.seoul.kr/course/active/detail.do) 에서 TIL을 올리는 블로그를 다같이 공유하게 되서 그 김에 오랜 숙원이었던 블로그를 만들게 되었어요.  
 
 ---
 
