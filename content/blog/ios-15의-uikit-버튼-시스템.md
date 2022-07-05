@@ -1,7 +1,7 @@
 ---
 path: UIKIt-button-system
 date: 2022-07-05T11:11:29.253Z
-title: iOS 15의 UIKit 버튼 시스템
+title: iOS 15의 UIKit 버튼 시스템 (작성중)
 description: WWDC 21의 UIKit 버튼 시스템을 리뷰하였습니다.
 ---
 
@@ -85,8 +85,28 @@ showActivityIndicator = true
 
 
 
+### Toggle Buttons
+UIControl에서 선택된(selected) 상태를 유지하며 버튼을 누를 때마다 자동으로 토글됩니다. 캘린더의 UIBarButtonItem에서도 작동하며, 예 들어 단 표시줄에서 요일 세부 정보를 활성, 비활성화 수 있습니다. 토글버튼을 눌러서 세부 정보 표시를 껐다 킬 수 있습니다.
+
+```
+let stockToggleAction = UIAction(title: "In Stock only" ) {_ in 
+    toggleStock()
+}
+
+let button = UIButton(primaryAction: stockToggleAction)
+
+// initial state
+button.changeSelectionAsPrimaryAction = true
+```
 
 
+### Pop-up Buttons
+
+
+### Pull-down Buttons
+
+
+### UIMenu
 ---
 
 
