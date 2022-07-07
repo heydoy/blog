@@ -50,8 +50,6 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 
 프로젝트의 기준은 일주일에 최소 5시간 이상을 프로젝트 수행시간으로 보는 건데, 아무래도 처음부터 공부하다보니 실제로는 일주일에 적게는 12시간에서 많게는 일주일 중 5일을 붙잡고 있곤 했습니다.
 
-
-
 ### \[1-2주차] 클론앱으 iOS 개발공부 / 꽁냥 앱 기획
 
 처음 2주 동안은 [패스트캠퍼스의 강의들](https://fastcampus.co.kr/category_online_programmingapp)을 참고하면서 클론앱을 만들면서 iOS 개발 공부를 했습니다. 학기 중 프로젝트라서 신청을 2월중에 했는데, 신청함과 동시에 미리 Swift 공부와 패스트캠퍼스의 이준원님 강의를 들었기 때문에 클론앱을 만들면서 공부하는 데는 크게 어려움을 느끼지 않았습니다. 
@@ -69,8 +67,6 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 3. `TableView`의 Cell에 액세서리인 체크마크를 토글할 수 있도록
 4. `UserDefaults`에 저장하여 앱을 종료하고 재실행하여도 데이터 유지
 
-
-
 **2) 굿바코로나19 API를 이용한 현황판 앱** 
 
 이 앱은 [굿바이코로나 19 API](https://api.corona-19.kr/)와 [Charts](https://github.com/danielgindi/Charts) 라이브러리를 이용해 현황판을 보여주는 앱입니다. `Alamofire`를 통해 네트워크 통신하는 걸 처음 해봤는데 따라치기에도 급급했어요. 
@@ -82,8 +78,6 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 3. `Alamofire` 를 사용해 굿바이코로나19 데이터 가져오기
 4. `Charts` 에서 파이차트 뷰를 가져와 보여주기 
 5. 파이차트 항목을 눌렀을 때 상세정보를 보여주기
-
-
 
 #### 기획 및 개발환경 셋업
 
@@ -99,44 +93,206 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 
 혹시 궁금하시다면 [여기](https://www.notion.so/kimdee/iOS-2977c7cc689e45cfa391c9d92b7b2e57)에서 제가 만든 노션 대시보드를 구경하실 수 있어요!
 
-
-
 **2) 플로우차트** 
 
 ![](../assets/untitled-4-.png)
-
-
 
 **3) 와이어프레임**
 
 ![](../assets/untitled-5-.png)
 
-
-
-### \[3-5주차] 애플뮤직 클론앱으로 iOS 개발공/ 꽁냥 앱 디자
+### \[3-5주차] 애플뮤직 클론앱으로 iOS 개발공부/ 꽁냥 앱 디자인
 
 #### 클론앱
 
-**\- 애플뮤 클론앱** 
+**\- 애플뮤직 클론앱** 
 
 `AVFoundation` 을 이용하여 음악 아이템을 불러와서 재생, 멈춤 , 콜렉션뷰의 헤더 커스텀 디자인 
 
 ![](../assets/untitled-8-.png)
 
-
-
-
-
-#### 디자
+#### 디자인
 
 **\- Figma로 UI 디자인** 
 
 ![](../assets/untitled-6-.png)
 
-
-
 **\- Framer로 인터랙션 디자인** 
 
-
-
 ![](../assets/untitled-7-.png)
+
+### \[6주차-15주차] 꽁냥 앱 개발
+
+**Firebase 연동하여 데이터 관리** 
+
+할 일, 알림, 집사가족 정보를 Firebase 를 통해 관리했습니다. 
+
+![](../assets/screen-shot-2022-07-07-at-21.56.37.png)
+
+리얼타임 데이터베이스의 데이터를 스냅샷으로 가져와 저장하는 클래스를 선언하여 로컬에서 관리하였습니다. 
+
+**데이터를 가져와서 콜렉션 뷰의 셀에 넣어 보여주게 구성** 
+
+configure() 메서드를 통해 셀을 구성. Todo 클래스는 Firebase 리얼타임데이터베이스에서 스냅샷을 생성자에서 받아와서 데이터를 저장하는 클래스 
+
+```
+class TodoListCollectionViewCell: UICollectionViewCell {
+    // MARK: - Properties
+    var catId: String = ""
+    
+    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var todoTitleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var finishedStamp: UIImageView!
+    
+    
+    // MARK: - Actions
+    
+    func configure(_ todo: Todo) {
+        // 데이터를 불러와서 셀을 구성
+        catId = todo.catId
+        iconImage.image = UIImage(named: todo.image)
+        todoTitleLabel.text = todo.title
+        timeLabel.text = todo.time
+        
+        if todo.isFinished == true {
+            finishedStamp.alpha = 1
+            
+        } else {
+            finishedStamp.alpha = 0
+        }
+    }
+
+}
+```
+
+**액션시트로 할 일 수정 , 가족에게 요청, 할 일 완료 만들기**
+
+![](../assets/screen-shot-2022-07-07-at-22.25.10.png)
+
+할 일 셀에서 점 3개 버튼을 눌러서 할 일로 해야될 일을 처리하는 액션시트를 띄워 할 일을 관리하게 했습니다. 
+
+![](../assets/screen-shot-2022-07-07-at-22.28.19.png)
+
+* 액션시트 선언 
+
+```
+let cell = catTodoList[sender.tag]
+        
+let actionSheet = UIAlertController(title: "할 일", message: "\(cell.title)의 액션을 고르세요", preferredStyle: .actionSheet)
+        
+var finishText = ""
+if cell.isFinished == true {
+    finishText = "완료 취소하기"
+} else {
+    finishText = "완료하기"
+}
+```
+
+* 할일을 완료, 완료 취소하는 액션
+
+```
+let finish = UIAlertAction(title: finishText, style: .default) { _ in
+
+            
+    cell.isFinished = !cell.isFinished
+
+
+    if cell.isFinished == true {
+
+
+        let alertParent = self.db.child("alert/\(self.familyCode)")
+
+        let alertPost = [
+            "time" : Date().toString(),
+            "finishedFrom" : self.userName,
+            "todo" : cell.title,
+            "todoKey" : cell.key,
+            "isFinished" : true,
+
+        ] as [String:Any]
+
+        alertParent.childByAutoId().updateChildValues(alertPost)
+
+        // 파이어베이스에 투두 isFinished 업데이트
+        print(cell.key)
+        let todoParent = self.db.child("catFamilies/\(self.familyCode)/todo/\(cell.key)")
+
+
+        let todoPost = [
+                    "isFinished": true,
+                    "finishTime": Date().toString()
+        ] as [String : Any]
+
+        todoParent.updateChildValues(todoPost)
+
+
+        self.showToast(message: "\(cell.title) \n완료하였습니다.")
+
+    } else {
+        // 완료취소인경우 완수타임 비우기
+        cell.finishTime = ""
+
+        // 파이어베이스에 투두 isFinished 업데이트
+        let todoParent = self.db.child("catFamilies/\(self.familyCode)/todo/\(cell.key)")
+
+
+        let todoPost = [
+                    "isFinished": false,
+                    "finishTime": ""
+        ] as [String : Any]
+
+        todoParent.updateChildValues(todoPost)
+
+        self.showToast(message: "\(cell.title) \n완료 취소하였습니다.")
+    }
+    self.collectionView.reloadData()
+
+}
+```
+
+* 가족에게 할 일을 요청하는 액션
+
+```
+let askFamily = UIAlertAction(title: "가족에게 요청하기", style: .default) { _ in
+    // 가족에게 메시지 보내기
+    let parent = self.db.child("alert/\(self.familyCode)")
+
+    let post = [
+        "time" : Date().toString(),
+        "askedFrom" : self.userName,
+        "todo" : cell.title,
+        "todoKey" : cell.key,
+        "isFinished" : false,
+        "isAsked": true
+    ] as [String:Any]
+
+    parent.childByAutoId().updateChildValues(post)
+
+    self.showToast(message: "가족에게 \(cell.title) \n요청하셨습니다.")
+}
+```
+
+* 셀 내용을 수정하는 액션
+
+```
+let editTodo = UIAlertAction(title: "수정하기", style: .default) { _ in
+    // edit 창 보여주기
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+    let addTodoViewController = storyboard.instantiateViewController(withIdentifier: "AddTodoVC") as! AddTodoViewController
+
+    addTodoViewController.familyCode = self.familyCode
+    addTodoViewController.isEditing = true
+    addTodoViewController.catID = cell.catId
+    addTodoViewController.todo = cell.title
+    addTodoViewController.time = cell.time
+    addTodoViewController.image = cell.image
+    addTodoViewController.memo = cell.memo
+
+    addTodoViewController.modalPresentationStyle = .fullScreen
+    self.present(addTodoViewController, animated: true, completion: nil)
+
+} 
+```
