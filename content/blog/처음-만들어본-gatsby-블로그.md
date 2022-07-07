@@ -6,7 +6,7 @@ description: Gatsby, Netlify를 이용하여 처음으로 블로그를 만들었
 ---
 ## 들어가며
 
-저는 사실 제작년부 사용하고 있는 티스토리 블로그([kimdee.tistory.com](https://kimdee.tistory.com/))가 있는데요. 애드센스를 붙였다보니 깔끔하지 않고 개발 내용 외에도 다른 신변잡기들이 많아서 개발공부용 블로그를 따로 만들어보고 싶다는 생각은 계속 하고 있었습니다.  
+저는 사실 제작년부터 사용하고 있는 티스토리 블로그([kimdee.tistory.com](https://kimdee.tistory.com/))가 있는데요. 애드센스를 붙였다보니 깔끔하지 않고 개발 내용 외에도 다른 신변잡기들이 많아서 개발공부용 블로그를 따로 만들어보고 싶다는 생각은 계속 하고 있었습니다.  
 
 현재 참여하고 있는 [SESAC iOS 교육 과정](https://sesac.seoul.kr/course/active/detail.do) 에서 TIL을 올리는 블로그를 다같이 공유하게 되서 그 김에 오랜 숙원이었던 블로그를 만들게 되었어요.  
 
@@ -36,7 +36,6 @@ node@12: undefined method `cellar' for #<BottleSpecification:0x00007fa8e75d54e8>
 
 이런 경고메시지가 뜨고 설치가 되지 않았습니다. 
 Homebrew 깃허브에서도 나온 [이슈](https://github.com/Homebrew/discussions/discussions/2599) 인데 나왔던 답변들을 적용해봐도 잘 되지 않아서결국 homebrew 부터 지우고 다시 설치하게 되었습니다.
-
 
 ### brew 설치
 
@@ -129,11 +128,10 @@ node -v
 gatsby-cli를 드디어 설치합니다.
 
 
+
 ```
 npm install -g gatsby-cli
 ```
-
-
 
 ### new gatsby blog \[!]
 
@@ -144,6 +142,7 @@ npm install -g gatsby-cli
 블로그 프로젝트를 만들 경로에서 아래 명령어를 쉘에 입력합니다.
 
 
+
 ```
 gatsby new \[your-project-name] https://github.com/thomaswangio/gatsby-personal-starter-blog
 ```
@@ -154,6 +153,7 @@ gatsby new \[your-project-name] https://github.com/thomaswangio/gatsby-personal-
 cd [your-project-name] 
 gatsby develop
 ```
+
 
 
 설치가 끝나면 블로그 사이트를 로컬에서 돌려볼 수 있습니다.
@@ -172,12 +172,12 @@ static/admin/config.yml 에서 backend에 name과 레포를 각각 github, 깃�
   repo: your-username/your-repo-name
 ```
 
-
 이제 본인의 깃허브계정에서 위에 config.yml에 입력한 레포 이름대로 새로운 레포를 만듭니다. 
 
 그 다음 블로그 프로젝트가 있는 디렉토리에서 git을 설정하고 github에 만들어둔 레포지토리와 연결합니다.
 
 
+
 ```
 git init
 
@@ -190,14 +190,10 @@ git remote add origin https://github.com/\[your-username]/\[your-repo-name].git
 git push -u origin master
 ```
 
-
-
-
 ### netlify
 
 * Netlify 배포 
   [app.netlify.com](https://app.netlify.com) 에 들어가서 "New Site from Git"으로 아까 만든 레포와 연결합니다.
-
 * Netlify CMS의 액세스 설
   [Github OAuth Apps](https://github.com/settings/developers)로 이동하여, netlify에서 사용할 새로운 auth provider를 만듭니다.
 
