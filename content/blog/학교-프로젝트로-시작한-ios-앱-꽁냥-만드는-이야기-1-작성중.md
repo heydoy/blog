@@ -50,7 +50,9 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 
 프로젝트의 기준은 일주일에 최소 5시간 이상을 프로젝트 수행시간으로 보는 건데, 아무래도 처음부터 공부하다보니 실제로는 일주일에 적게는 12시간에서 많게는 일주일 중 5일을 붙잡고 있곤 했습니다.
 
-### \[1-2주차] 클론앱을 만들면서 했던 iOS 개발공부 / 꽁냥 앱 기획
+
+
+### \[1-2주차] 클론앱으 iOS 개발공부 / 꽁냥 앱 기획
 
 처음 2주 동안은 [패스트캠퍼스의 강의들](https://fastcampus.co.kr/category_online_programmingapp)을 참고하면서 클론앱을 만들면서 iOS 개발 공부를 했습니다. 학기 중 프로젝트라서 신청을 2월중에 했는데, 신청함과 동시에 미리 Swift 공부와 패스트캠퍼스의 이준원님 강의를 들었기 때문에 클론앱을 만들면서 공부하는 데는 크게 어려움을 느끼지 않았습니다. 
 
@@ -73,11 +75,7 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 
 이 앱은 [굿바이코로나 19 API](https://api.corona-19.kr/)와 [Charts](https://github.com/danielgindi/Charts) 라이브러리를 이용해 현황판을 보여주는 앱입니다. `Alamofire`를 통해 네트워크 통신하는 걸 처음 해봤는데 따라치기에도 급급했어요. 
 
-
-
 ![](../assets/screen-shot-2022-07-07-at-19.20.49.png)
-
-
 
 1. `Cocoapods` 이용하여 `Charts`, `Alamofire` 세팅 
 2. 응답받은 `JSON`을 맵핑할 수 있는 구조체 선언 
@@ -99,6 +97,46 @@ description: 2022-1학기 자기주도진로프로젝트 최종성과발표회�
 
 ![](../assets/untitled-3-.png)
 
+혹시 궁금하시다면 [여기](https://www.notion.so/kimdee/iOS-2977c7cc689e45cfa391c9d92b7b2e57)에서 제가 만든 노션 대시보드를 구경하실 수 있어요!
 
 
-혹시 궁금하시다면 [여기](https://www.notion.so/kimdee/iOS-2977c7cc689e45cfa391c9d92b7b2e57)에서 제가 만든 노션대시보드를 구경하실 수 있어요!
+
+**2) 플로우차트** 
+
+![](../assets/untitled-4-.png)
+
+
+
+**3) 와이어프레임**
+
+![](../assets/untitled-5-.png)
+
+
+
+### \[3-5주차] 애플뮤직 클론앱으로 iOS 개발공/ 꽁냥 앱 디자
+
+#### 클론앱
+
+**\- 애플뮤 클론앱** 
+
+`AVFoundation` 을 이용하여 음악 아이템을 불러와서 재생, 멈춤 , 콜렉션뷰의 헤더 커스텀 디자인 
+
+![](../assets/untitled-8-.png)
+
+
+
+
+
+#### 디자
+
+**\- Figma로 UI 디자인** 
+
+![](../assets/untitled-6-.png)
+
+
+
+**\- Framer로 인터랙션 디자인** 
+
+
+
+![](../assets/untitled-7-.png)
