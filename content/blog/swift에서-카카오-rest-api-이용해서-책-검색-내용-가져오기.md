@@ -6,7 +6,9 @@ description: Kakao API와 Alamofire 이용해서 JSON 데이터를 가져와봅�
 ---
 # 들어서며
 
-책 검색 API 쓸 일이 있어서, 네이버와 카카오를 비교해보고 싶어서 실습을 하게 됐습니다.  
+개인 프로젝트로 책 검색 API 쓸 일이 생겼는데요. 네이버와 카카오를 비교해보고 싶어서 실습을 해보게 되었습니다.  
+
+
 
 # 목표
 
@@ -15,15 +17,21 @@ description: Kakao API와 Alamofire 이용해서 JSON 데이터를 가져와봅�
 * JSON 데이터를 Codable한 구조체로 가져오기 
 * 검색결과 중 첫번째 항목을 화면에 보여주기
 
+
+
 - - -
 
 # 시작하기
+
+
 
 ## 카카오 API 등록하기
 
 ![](../assets/screen-shot-2022-07-15-at-23.44.25.png)
 
 [Kakao Developers](https://developers.kakao.com/console/app) 에 서 애플리케이션을 등록하면 앱 키를 받을 수 있습니다. 이 중 REST API 키를 사용하는데 중요한 것은 "KakaoAK (앱키)" 형태로 들어가야한다는 점입니다. **KakaoAK** 뒤에 스페이스 한 칸이 들어가고 그 후에 발급받은 REST API키를 써야하는데 스페이스 한 칸이 있는 걸 모르고 한 30분은 안되는 이유를 찾느라 고생했습니다. 
+
+
 
 ## JSON 데이터를 가져올 구조체 선언
 
@@ -76,6 +84,8 @@ struct BookInfo: Codable {
 *[Alamofire](https://github.com/Alamofire/Alamofire)*는 HTTP 네트워킹 라이브러리로 Swift에서 기본으로 제공하는 *URLSession*보다 훨씬 편리하게 코드를 짤 수 있습니다. 
 
 저의 경우 기존에 작업하던 프로젝트에 Kakao SDK를 Swift Package Manager를 이용해 설치해두었는데, Kakao SDK가 Alamofire를 포함하고 있어서 자동으로 설치가 됐습니다. 만약 없다면 위에 언급한 Swift Package Manager나 Cocoapod을 이용해 Alamofire를 추가해주어야 합니다. 
+
+
 
 ```
 func fetchSearchResult(
@@ -130,7 +140,9 @@ func fetchSearchResult(
     
 ```
 
-#### 검색 버튼 입력시 fetch 호출
+#### 
+
+### 검색 버튼 입력시 fetch 호출
 
 ```
     @IBAction func didButtonTapped(_ sender: UIButton) {
@@ -140,7 +152,7 @@ func fetchSearchResult(
     }
 ```
 
-#### fetch를 도와주는 함수
+### fetch를 도와주는 함수
 
 ```
     func searchHelper() {
@@ -160,9 +172,13 @@ func fetchSearchResult(
 
 함수를 불러오면서 데이터를 가져오는 데 성공했으면 콘솔에 해당 데이터를 확인하는 코드를 넣었는데요. 
 
+
+
 ![](../assets/screen-shot-2022-07-16-at-0.23.19.png)
 
 잘 가져온 것을 확인할 수 있습니다. 
+
+
 
 ## 검색한 결과 중 첫번째 항목을 화면에 보여주기
 
@@ -187,9 +203,24 @@ func fetchSearchResult(
 
 ![](../assets/simulator-screen-recording-iphone-11-2022-07-16-at-00.28.25.gif)
 
+
+
 잘 가져오는 것을 확인할 수 있습니다. 
 
----
 
-# 마치며 
-카카오 책 검색 API 에서는 검색할 수 있는 조건이 
+
+- - -
+
+# 마치며
+
+카카오 책 검색 API 에서는 검색할 수 있는 조건은 아래와 같이 질의어를 통해 제목, ISBN, 출판사, 인명(저자, 역자)만 검색할 수 있는데요. 
+
+ 
+
+![](../assets/screen-shot-2022-07-16-at-0.31.40.png)
+
+
+
+그러다보니 장르별로 검색할 수 없어서 아쉬움이 남습니다. 네이버의 경우 책 검색 시 장르 검색이 가능한 것으로 보여서 다음 글로 실습결과를 공유하고자 합니다. 
+
+읽어주셔서 감사합니다.
