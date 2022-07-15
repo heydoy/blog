@@ -4,14 +4,24 @@ date: 2022-07-15T00:10:05.989Z
 title: Swift에서 카카오 REST API 이용해서 책 검색 내용 가져오기
 description: Kakao API와 Alamofire 이용해서 JSON 데이터를 가져와봅니다.
 ---
-## 목표 
--  KaKao REST API 등록하기 
--  API로 책을 검색한 내용을 가져오기
--  JSON 데이터를 Codable한 구조체로 가져오기 
--  검색결과 중 첫번째 항목을 화면에 보여주기
+## 목표
+
+* KaKao REST API 등록하기 
+* API로 책을 검색한 내용을 가져오기
+* JSON 데이터를 Codable한 구조체로 가져오기 
+* 검색결과 중 첫번째 항목을 화면에 보여주기
+
+## 카카오 API 등록하기
+
+![](../assets/screen-shot-2022-07-15-at-23.44.25.png)
+
+
+[Kakao Developers](https://developers.kakao.com/console/app) 에 서 애플리케이션을 등록하면 앱 키를 받을 수 있다. 이 중 REST API 키를 사용할 예정이다. 
+
 
 
 ### JSON 데이터를 가져올 구조체 선언
+
 ```
 struct BookResult: Codable {
     
@@ -34,15 +44,15 @@ struct BookInfo: Codable {
 }
 ```
 
+### 데이터를 Alamofire로 Fetch해오는 함수
 
-### 데이터를 Alamofire로 Fetch해오는 함수 
 ```
 func fetchSearchResult(
         completionHandler: @escaping (Result<BookResult, Error>)-> Void
     ) {
         let url = "https://dapi.kakao.com/v3/search/book"
         let headers: HTTPHeaders = [
-            "Authorization" : "KakaoAK 90f511f7b5590df7b0841eb5579720f2"
+            "Authorization" : "KakaoAK (REST API )"
         ]
         let body: Parameters = [
             "query" : self.query
@@ -70,12 +80,12 @@ func fetchSearchResult(
     
         })
     }
-
 ```
 
+### 키워드를 입력 후 검색 버튼 눌렀을 때 fetch하는 함수 호출하기
 
-### 키워드를 입력 후 검색 버튼 눌렀을 때 fetch하는 함수 호출하기 
-#### 키워드 입력 시 저장 
+#### 키워드 입력 시 저장
+
 ```
  @IBAction func queryEditingChanged(_ sender: UITextField) {
         let text = sender.text ?? ""
@@ -85,7 +95,8 @@ func fetchSearchResult(
     
 ```
 
-#### 검색 버튼 입력시 fetch 호출 
+#### 검색 버튼 입력시 fetch 호출
+
 ```
     @IBAction func didButtonTapped(_ sender: UIButton) {
         searchHelper()
@@ -94,7 +105,8 @@ func fetchSearchResult(
     }
 ```
 
-#### fetch를 도와주는 함수 
+#### fetch를 도와주는 함수
+
 ```
     func searchHelper() {
         self.fetchSearchResult ( completionHandler: {[weak self] result in
@@ -111,8 +123,7 @@ func fetchSearchResult(
     }
 ```
 
-
-### 검색한 결과 중 첫번째를 화면에 보여주기 
+### 검색한 결과 중 첫번째를 화면에 보여주기
 
 ```
     func configureResult( result: BookInfo) {
