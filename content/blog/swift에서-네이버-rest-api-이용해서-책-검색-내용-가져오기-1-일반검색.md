@@ -11,7 +11,7 @@ description: JSON 형태로 가져온 책검색 데이터 목록을 테이블뷰
 
 ### 데이터 내의 HTML 태그 지우기
 
-`String` 구조체의 메서드 중 `.replacingOccurences()`를 이용해 HTML 태그를 지울 수 있습니다. 정규식을 이용해 <> 형태로 된 단어들을 빈 문자열로 대체합니다.
+`String` 구조체의 메서드 중 `.replacingOccurences()`를 이용해 HTML 태그를 지울 수 있습니다. 정규식을 이용해 HTML 태그 형태로 된 단어들을 빈 문자열로 대체합니다.
 
 
 
