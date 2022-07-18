@@ -37,8 +37,39 @@ description: JSON 형태로 가져온 책검색 데이터 목록을 콜렉션뷰
 
 이제 [Application] > [내 애플리케이션]에서 아까 등록한 앱을 선택해서 들어가면 클라이언트 ID와 클라이언트 Secret을 확인할 수 있습니다. 이 값들은 나중에 네트워킹할 때 헤더 영역에 각각 **X-Naver-Client-Id**, **X-Naver-Client-Secret** 키에 밸류로 들어가게 될 값들입니다. 
 
-- - -
+--- 
+### 검색내용을 받아올 구조체 만들기 
+[API 이용안내] > [검색]에서 [책 검색 API 설명 링크](https://developers.naver.com/docs/serviceapi/search/book/book.md#%EC%B1%85)를 보고 구조체를 만듭니다. 
 
+카카오와는 조금 다르게, JSON 데이터 가장 상위에 검색한 책 정보 배열이 저장되는 items 외에 마지막으로 빌드한 날짜 **lastBuildDate**, 총 검색결과 수 **total**, 검색결과 시작위치 **start**, 검색 결과 출력건수 **display** 가 있습니다.
+```
+struct NBookSearchResult : Codable {
+
+    let lastBuildDate: String
+    let total: Int
+    let start: Int
+    let display: Int
+    let items: [NBookInfo]
+}
+
+struct NBookInfo: Codable {
+    let title: String
+    let link: String
+    let image: String
+    let author: String
+    let price: String
+    let discount: String
+    let publisher: String
+    let pubdate: String
+    let isbn: String
+    let description: String
+}
+```
+---
+### 검색한 내용이 들어갈 콜렉션 뷰 만들기
+
+
+---
 ### 데이터 내의 HTML 태그 지우기
 
 `String` 구조체의 메서드 중 `.replacingOccurences()`를 이용해 HTML 태그를 지울 수 있습니다. 정규식을 이용해 HTML 태그 형태로 된 단어들을 빈 문자열로 대체합니다.
