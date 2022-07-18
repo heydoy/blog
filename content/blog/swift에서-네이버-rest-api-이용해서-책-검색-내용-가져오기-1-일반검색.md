@@ -268,7 +268,7 @@ class NBookResultCell: UICollectionViewCell {
 }
 ```
 
-여기서 빌드했을 때 아래와 같이, 책 제목과 소개글에 HTML가 붙는 것이 영 보기 좋지 않습니다.
+여기서 빌드했을 때 아래와 같이, 책 제목과 소개글에 HTML 태그가 붙는 것이 영 보기 좋지 않습니다.
 
 ![](../assets/screen-shot-2022-07-18-at-22.43.46.png)
 
