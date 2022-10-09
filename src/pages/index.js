@@ -31,7 +31,7 @@ class IndexPage extends React.Component {
 	🐈
 	</span>
 	키우는 이야기를 올립니다. 새로 올라오는 글을 받고 싶으시다면{" "}
-	<a href="feed.xml" target="_blank">
+	<a href="https://feed43.com/kimdeeblogrss.xml" target="_blank">
 	RSS 피드
 	</a>
 	를 구독하세요. 
