@@ -142,7 +142,7 @@ UI가 업데이트 되는 동안 그 뒷편에서 네트워크 통신이 일어�
 
 얼마전에 수료식을 마쳤습니다. 수료식을 다녀오고 얼마나 벅찼는지 몰라요. 
 
-<iframe border=0 frameborder=0 height=750 width=550
+<iframe border="0" frameborder="0" height="750" width="550"
  src="https://twitframe.com/show?url=https://twitter.com/kimdee_dev/status/1601724482712145920?s=12&t=hNvungTNXIrWLgyEBmf93A"></iframe>
 
 혼자 공부하면서 가장 힘들었던 건, 뭘 모르는지조차 모른다는 점이었습니다. 
