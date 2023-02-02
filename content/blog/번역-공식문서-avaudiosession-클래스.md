@@ -49,7 +49,7 @@ func application(_ application: UIApplication,
 }
 ```
 
-오디오 세션은 `[setActive(_:)](https://developer.apple.com/documentation/avfaudio/avaudiosession/1616597-setactive)` 또는 `[setActive(_:options:)](https://developer.apple.com/documentation/avfaudio/avaudiosession/1616627-setactive)` 메서드를 사용하여 세션을 활성화할 때 이 설정을 사용한다. 
+오디오 세션은 [setActive(_:)](https://developer.apple.com/documentation/avfaudio/avaudiosession/1616597-setactive) 또는 [setActive(_:options:)](https://developer.apple.com/documentation/avfaudio/avaudiosession/1616627-setactive) 메서드를 사용하여 세션을 활성화할 때 이 설정을 사용한다. 
 
 <aside>
 
