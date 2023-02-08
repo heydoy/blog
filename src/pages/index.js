@@ -30,11 +30,11 @@ class IndexPage extends React.Component {
 	<span role="img" aria-label="cat emoji">
 	🐈
 	</span>
-	키우는 이야기를 올립니다. 새로 올라오는 글을 받고 싶으시다면{" "}
-	<a href="https://feed43.com/kimdeeblogrss.xml" target="_blank">
-	RSS 피드
+	키우는 이야기를 올립니다. 블로그를 이전하였습니다. 2023년 이후 글은{" "}
+	<a href="https://doy.oopy.io/" target="_blank">
+	doy.oopy.io
 	</a>
-	를 구독하세요. 
+	에서 확인해보세요.  
         </p>
         <Link to="/blog/">
           <Button marginTop="35px">Go to Blog</Button>
